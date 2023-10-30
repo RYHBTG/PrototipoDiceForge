@@ -7,6 +7,7 @@ O aplicativo tem como objetivo a criação de forma facil de fichas de RPG, mont
 A possibilidade de armazenar varias fichas e possivelmente uma funcionalidade de exportação para utilização em aplicativos externos como Roll20 e FoundryVTT.
 # Designe Do Aplicativo utilizando o Mockplus
 ## Rascunho Não-Definitivo ABAIXO!
-![image](https://github.com/RYHBTG/PrototipoIonic/assets/125528084/bb59eb18-2568-4d73-b30e-81e64140f623)
+![image](https://github.com/RYHBTG/PrototipoIonic/assets/125528084/32b04bf3-7c61-4995-b51d-91086c838114)
+
 
 
