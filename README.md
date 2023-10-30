@@ -7,5 +7,6 @@ O aplicativo tem como objetivo a criação de forma facil de fichas de RPG, mont
 A possibilidade de armazenar varias fichas e possivelmente uma funcionalidade de exportação para utilização em aplicativos externos como Roll20 e FoundryVTT.
 # Designe Do Aplicativo utilizando o Mockplus
 ## Rascunho Não-Definitivo ABAIXO!
-https://rp.mockplus.com/run/7n1ckaHbE-E/gxzq2l7-jAe/ThLSSQA1US-?nav=1&cps=expand&rps=expand&rt=1&la=0&out=0&ha=0&dt=iphoneX& Please view "Projeto Ionic"
+![image](https://github.com/RYHBTG/PrototipoIonic/assets/125528084/bb59eb18-2568-4d73-b30e-81e64140f623)
+
 
