@@ -1,0 +1,22 @@
+.squere
+{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+.VIA{
+  display: flex;
+  justify-content:  center;
+
+  flex-direction: row;
+  background-color: red;
+  margin-top: 2%;
+}
+.coluna{
+  display: flex;
+  flex-direction: column;
+  margin: 2%;
+  text-align: center;
+}
+
