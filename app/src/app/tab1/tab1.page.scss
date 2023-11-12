@@ -19,4 +19,46 @@
   margin: 2%;
   text-align: center;
 }
+.content{
+  background-color: blue;
+  width: 10dvh;
+  height: 11dvh;
+  margin: 5%;
+  text-align: center;
+  padding-top: 2%;
+  font-size: 85%;
+
+}
+.atribut{
+  background-color: whitesmoke;
+  width: 48%;
+  height: 48%;
+  margin-left: 25%;
+  margin-top: 10%;
+  color:black;
+  text-align: center;
+  padding-top: 12%;
+  font-size: large;
+  
+}
+.modfy{
+  background-color: whitesmoke;
+  border-radius: 50%;
+  width: 25%;
+  height: 25%;
+  margin-left: 35% ;
+  margin-top: 8%;
+  color: black;
+  padding-right: 5%;
+  padding-top: 2%;
+  text-align: center;
+}
+.att{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+
 
