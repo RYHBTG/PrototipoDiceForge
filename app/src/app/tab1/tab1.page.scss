@@ -63,11 +63,12 @@
   flex-direction: column;
   flex-wrap: wrap;
   max-width: 50%;
-  max-height: 15%;
-  justify-content: space-between;
+  max-height: 22%;
+  justify-content: center;
 }
 .condlist ion-checkbox{
   max-width: min-content;
+  padding: 3px;
 
 }
 ion-input.custom {
