@@ -29,7 +29,7 @@
   font-size: 85%;
 
 }
-.atribut{
+/*.atribut{
   background-color: whitesmoke;
   width: 48%;
   height: 48%;
@@ -39,8 +39,8 @@
   text-align: center;
   padding-top: 12%;
   font-size: large;
-  
-}
+
+}*/
 .modfy{
   background-color: whitesmoke;
   border-radius: 50%;
@@ -57,6 +57,33 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+.condlist{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 50%;
+  max-height: 15%;
+  justify-content: space-between;
+}
+.condlist ion-checkbox{
+  max-width: min-content;
+
+}
+ion-input.custom {
+  --background: #d8d8d8;
+  --color: #000000;
+
+
+  --padding-bottom: 10px;
+  --padding-end: 10px;
+  --padding-start: 10px;
+  --padding-top: 10px;
+  font-size: 150%;
+  max-width: 60%;
+  display: flex;
+  margin-left: 20%;
+
 }
 
 
