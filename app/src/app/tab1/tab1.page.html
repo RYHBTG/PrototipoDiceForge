@@ -71,39 +71,44 @@
     <ion-label>Força</ion-label>
     <ion-input
   aria-label="Custom input"
-  value="15"
+  value="{{for}}"
   class="custom"
   maxlength="2"
   type="number"
+  (ionInput)="setfor($event)"
+
 ></ion-input>
     <div class="modfy">
-      <ion-label>+3</ion-label>
+      <ion-label>{{modificadorCalc(for)}}</ion-label>
     </div>
   </div>
   <div class="content">
     <ion-label>Destresa</ion-label>
         <ion-input
   aria-label="Custom input"
-  value="15"
+  value="{{des}}"
   class="custom"
   maxlength="2"
   type="number"
+  (ionInput)="setdes($event)"
+  #ionInputEl
 ></ion-input>
     <div class="modfy">
-      <ion-label>+3</ion-label>
+      <ion-label>{{modificadorCalc(des)}}</ion-label>
     </div>
   </div>
   <div class="content">
     <ion-label>Constituição</ion-label>
         <ion-input
   aria-label="Custom input"
-  value="15"
+  value="{{con}}"
   class="custom"
   maxlength="2"
   type="number"
+  (ionInput)="setcon($event)"
 ></ion-input>
     <div class="modfy">
-      <ion-label>+3</ion-label>
+      <ion-label>{{modificadorCalc(con)}}</ion-label>
     </div>
   </div>
 </div>
@@ -112,39 +117,42 @@
     <ion-label>Inteligência</ion-label>
         <ion-input
   aria-label="Custom input"
-  value="15"
+  value="{{int}}"
   class="custom"
   maxlength="2"
   type="number"
+  (ionInput)="setint($event)"
 ></ion-input>
     <div class="modfy">
-      <ion-label>+3</ion-label>
+      <ion-label>{{modificadorCalc(int)}}</ion-label>
     </div>
   </div>
   <div class="content">
     <ion-label>Sabedoria</ion-label>
         <ion-input
   aria-label="Custom input"
-  value="15"
+  value="{{sab}}"
   class="custom"
   maxlength="2"
   type="number"
+  (ionInput)="setsab($event)"
 ></ion-input>
     <div class="modfy">
-      <ion-label>+3</ion-label>
+      <ion-label>{{modificadorCalc(sab)}}</ion-label>
     </div>
   </div>
   <div class="content">
     <ion-label>Carisma</ion-label>
         <ion-input
   aria-label="Custom input"
-  value="15"
+  value="{{car}}"
   class="custom"
   maxlength="2"
   type="number"
+  (ionInput)="setcar($event)"
 ></ion-input>
     <div class="modfy">
-      <ion-label>+3</ion-label>
+      <ion-label>{{modificadorCalc(car)}}</ion-label>
     </div>
   </div>
 </div>
