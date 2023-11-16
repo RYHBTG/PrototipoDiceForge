@@ -156,6 +156,113 @@
     </div>
   </div>
 </div>
+<ion-list class="Pericias">
+  <ion-list-header>
+    <ion-label>Pericias</ion-label>
+  </ion-list-header>
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label> Força </ion-label>
+    </ion-item-divider>
+    <ion-item lines="none" button detail="false" >
+      <ion-checkbox labelPlacement="end" justify="start"[(ngModel)]="Atletismo">Atletismo</ion-checkbox>
+      
+      <label>{{skillCheckCalc(for,Atletismo)}}</label>
+    </ion-item>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label> Destresa</ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Acrobacia" >Acrobacia</ion-checkbox>
+      <label>{{skillCheckCalc(des,Acrobacia)}}</label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Prestidigitacao" >Prestidigitação</ion-checkbox>
+      <label>{{skillCheckCalc(des,Prestidigitacao)}}</label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Furtividade">Furtividade</ion-checkbox>
+      <label>{{skillCheckCalc(des,Furtividade)}}</label>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>Inteligência</ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Arcanismo">Arcanismo</ion-checkbox>
+      <label>{{skillCheckCalc(int,Arcanismo)}}</label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Historia">História</ion-checkbox>
+      <label>{{skillCheckCalc(int,Historia)}}</label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Investigacao">Investigação</ion-checkbox>
+      <label>{{skillCheckCalc(int,Investigacao)}}</label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Natureza">Natureza</ion-checkbox>
+      <label>{{skillCheckCalc(int,Natureza)}}</label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Religiao">Religião</ion-checkbox>
+      <label>{{skillCheckCalc(int,Religiao)}}</label>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>Sabedoria</ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="LidarAnimais">Lidar com Animais</ion-checkbox>
+      <label>{{skillCheckCalc(sab,LidarAnimais)}}</label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Intuicao">Intuição</ion-checkbox>
+      <label>{{skillCheckCalc(sab,Intuicao)}}</label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Medicina">Medicina</ion-checkbox>
+      <label>{{skillCheckCalc(sab,Medicina)}}</label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Percepcao">Percepção</ion-checkbox>
+      <label>{{skillCheckCalc(sab,Percepcao)}}</label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Sobrevivencia">Sobrevivencia</ion-checkbox>
+      <label>{{skillCheckCalc(sab,Sobrevivencia)}}</label>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>Carisma</ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Enganacao">Enganação</ion-checkbox>
+      <label>{{skillCheckCalc(car,Enganacao)}}</label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Intimidacao">Intimidação</ion-checkbox>
+      <label>{{skillCheckCalc(car,Intimidacao)}}</label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Performance">Performance</ion-checkbox>
+      <label>{{skillCheckCalc(car,Performance)}}</label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Persuasao">Persuasão</ion-checkbox>
+      <label>{{skillCheckCalc(car,Persuasao)}}</label>
+    </ion-item>
+  </ion-item-group>
+</ion-list>
+
+
 <div class="condlist">
 <ion-checkbox labelPlacement="end">Agarrado</ion-checkbox>
 <ion-checkbox labelPlacement="end">Amedrontado</ion-checkbox>
