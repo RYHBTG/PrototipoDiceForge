@@ -1,8 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="warning tint"> <!--mudado a cor o toolbar-->
-    <ion-grid ><!--Criado um grid pra separar as informaçoes-->
+    <ion-grid class="toolbar"><!--Criado um grid pra separar as informaçoes-->
       <ion-row class="ion-justify-content-between"> <!--Faz o juste automatico do tamanho-->
         <ion-row>
+          <ion-img style="width: 40px;height: 40px;" src="../../assets/5aad1e98e2f1a0c78ce302f9bfe76f1a.jpg"></ion-img>
           <ion-col size="auto"><!--Faz o juste automatico do tamanho-->
             <ion-label>Alcides Sandoli</ion-label>
             <ion-row>
@@ -31,12 +32,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<ion-content [fullscreen]="true">
+
 </ion-content>

@@ -1,8 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="warning tint"> <!--mudado a cor o toolbar-->
-    <ion-grid ><!--Criado um grid pra separar as informaçoes-->
+    <ion-grid class="toolbar"><!--Criado um grid pra separar as informaçoes-->
       <ion-row class="ion-justify-content-between"> <!--Faz o juste automatico do tamanho-->
         <ion-row>
+          <ion-img style="width: 40px;height: 40px;" src="../../assets/5aad1e98e2f1a0c78ce302f9bfe76f1a.jpg"></ion-img>
           <ion-col size="auto"><!--Faz o juste automatico do tamanho-->
             <ion-label>Alcides Sandoli</ion-label>
             <ion-row>
@@ -33,12 +34,14 @@
 
 <ion-content [fullscreen]="true" color="light shade">
 <div class="squere">
-  <ion-button  class="bt">Descanso <br> Longo</ion-button>
-  <div style="max-width: 28%; max-height: 28%;">
-    <ion-label>Bônus de proficiência: +2</ion-label>
-    <ion-img src="https://ionicframework.com/docs/img/demos/thumbnail.svg"></ion-img>
+<div>
+  <ion-label>Bônus de Proficência: {{proficiencia}}</ion-label>
   </div>
-  <ion-button  class="bt">Desncanço <br> Curto</ion-button>
+  <div>
+  <ion-button class="bnt">Descanço Curto</ion-button>
+  <ion-button class="bnt">Descanço Longo</ion-button>
+</div>
+
 </div>
 <div class="VIA">
   <div class="coluna">
@@ -74,8 +77,8 @@
   value="{{for}}"
   class="custom"
   maxlength="2"
-  type="number"
   (ionInput)="setfor($event)"
+  inputmode="numeric"
 
 ></ion-input>
     <div class="modfy">
@@ -89,7 +92,6 @@
   value="{{des}}"
   class="custom"
   maxlength="2"
-  type="number"
   (ionInput)="setdes($event)"
   #ionInputEl
 ></ion-input>
@@ -104,15 +106,12 @@
   value="{{con}}"
   class="custom"
   maxlength="2"
-  type="number"
   (ionInput)="setcon($event)"
 ></ion-input>
     <div class="modfy">
       <ion-label>{{modificadorCalc(con)}}</ion-label>
     </div>
   </div>
-</div>
-<div class="att">
   <div class="content">
     <ion-label>Inteligência</ion-label>
         <ion-input
@@ -120,9 +119,9 @@
   value="{{int}}"
   class="custom"
   maxlength="2"
-  type="number"
   (ionInput)="setint($event)"
-></ion-input>
+>
+</ion-input>
     <div class="modfy">
       <ion-label>{{modificadorCalc(int)}}</ion-label>
     </div>
@@ -134,7 +133,6 @@
   value="{{sab}}"
   class="custom"
   maxlength="2"
-  type="number"
   (ionInput)="setsab($event)"
 ></ion-input>
     <div class="modfy">
@@ -148,7 +146,6 @@
   value="{{car}}"
   class="custom"
   maxlength="2"
-  type="number"
   (ionInput)="setcar($event)"
 ></ion-input>
     <div class="modfy">
@@ -166,8 +163,13 @@
     </ion-item-divider>
     <ion-item lines="none" button detail="false" >
       <ion-checkbox labelPlacement="end" justify="start"[(ngModel)]="Atletismo">Atletismo</ion-checkbox>
-      
       <label>{{skillCheckCalc(for,Atletismo)}}</label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
     </ion-item>
   </ion-item-group>
 
@@ -179,14 +181,32 @@
     <ion-item>
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Acrobacia" >Acrobacia</ion-checkbox>
       <label>{{skillCheckCalc(des,Acrobacia)}}</label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
     </ion-item>
     <ion-item>
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Prestidigitacao" >Prestidigitação</ion-checkbox>
       <label>{{skillCheckCalc(des,Prestidigitacao)}}</label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
     </ion-item>
     <ion-item lines="none">
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Furtividade">Furtividade</ion-checkbox>
       <label>{{skillCheckCalc(des,Furtividade)}}</label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
     </ion-item>
   </ion-item-group>
   <ion-item-group>
@@ -196,22 +216,52 @@
     <ion-item>
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Arcanismo">Arcanismo</ion-checkbox>
       <label>{{skillCheckCalc(int,Arcanismo)}}</label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
     </ion-item>
     <ion-item>
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Historia">História</ion-checkbox>
       <label>{{skillCheckCalc(int,Historia)}}</label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
     </ion-item>
     <ion-item>
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Investigacao">Investigação</ion-checkbox>
       <label>{{skillCheckCalc(int,Investigacao)}}</label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
     </ion-item>
     <ion-item>
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Natureza">Natureza</ion-checkbox>
       <label>{{skillCheckCalc(int,Natureza)}}</label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
     </ion-item>
     <ion-item lines="none">
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Religiao">Religião</ion-checkbox>
       <label>{{skillCheckCalc(int,Religiao)}}</label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
     </ion-item>
   </ion-item-group>
   <ion-item-group>
@@ -221,22 +271,52 @@
     <ion-item>
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="LidarAnimais">Lidar com Animais</ion-checkbox>
       <label>{{skillCheckCalc(sab,LidarAnimais)}}</label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
     </ion-item>
     <ion-item>
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Intuicao">Intuição</ion-checkbox>
       <label>{{skillCheckCalc(sab,Intuicao)}}</label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
     </ion-item>
     <ion-item>
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Medicina">Medicina</ion-checkbox>
       <label>{{skillCheckCalc(sab,Medicina)}}</label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
     </ion-item>
     <ion-item>
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Percepcao">Percepção</ion-checkbox>
       <label>{{skillCheckCalc(sab,Percepcao)}}</label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
     </ion-item>
     <ion-item>
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Sobrevivencia">Sobrevivencia</ion-checkbox>
       <label>{{skillCheckCalc(sab,Sobrevivencia)}}</label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
     </ion-item>
   </ion-item-group>
   <ion-item-group>
@@ -246,23 +326,47 @@
     <ion-item>
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Enganacao">Enganação</ion-checkbox>
       <label>{{skillCheckCalc(car,Enganacao)}}</label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
     </ion-item>
     <ion-item>
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Intimidacao">Intimidação</ion-checkbox>
       <label>{{skillCheckCalc(car,Intimidacao)}}</label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
     </ion-item>
     <ion-item>
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Performance">Performance</ion-checkbox>
       <label>{{skillCheckCalc(car,Performance)}}</label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
     </ion-item>
     <ion-item>
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Persuasao">Persuasão</ion-checkbox>
       <label>{{skillCheckCalc(car,Persuasao)}}</label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
     </ion-item>
   </ion-item-group>
 </ion-list>
 
-
+<!--
 <div class="condlist">
 <ion-checkbox labelPlacement="end">Agarrado</ion-checkbox>
 <ion-checkbox labelPlacement="end">Amedrontado</ion-checkbox>
@@ -280,5 +384,5 @@
 <ion-checkbox labelPlacement="end">Surdo</ion-checkbox>
 <ion-checkbox labelPlacement="end">Surpresa</ion-checkbox>
 </div>
-
+-->
 </ion-content>

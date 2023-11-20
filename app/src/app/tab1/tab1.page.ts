@@ -7,9 +7,9 @@ import { Component, ViewChild } from '@angular/core';
 })
 export class Tab1Page {
 
-  
-  
-  
+
+
+
   constructor() {}
 
 
@@ -68,7 +68,7 @@ export class Tab1Page {
     else
       return "" + att;
   }
-  
+
   skillCheckCalc(att:number,proficiente:boolean): string{
     if(proficiente)
       att = Math.floor((att-10)/2) + this.proficiencia;

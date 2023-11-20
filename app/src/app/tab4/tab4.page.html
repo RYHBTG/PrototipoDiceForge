@@ -1,8 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="warning tint"> <!--mudado a cor o toolbar-->
-    <ion-grid ><!--Criado um grid pra separar as informaçoes-->
+    <ion-grid class="toolbar"><!--Criado um grid pra separar as informaçoes-->
       <ion-row class="ion-justify-content-between"> <!--Faz o juste automatico do tamanho-->
         <ion-row>
+          <ion-img style="width: 40px;height: 40px;" src="../../assets/5aad1e98e2f1a0c78ce302f9bfe76f1a.jpg"></ion-img>
           <ion-col size="auto"><!--Faz o juste automatico do tamanho-->
             <ion-label>Alcides Sandoli</ion-label>
             <ion-row>
@@ -32,27 +33,46 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<h2>Magias</h2>
+<h1>Magias</h1>
   <ion-card>
     <ion-card-header>
       <ion-card-title>1° Circulo</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-list>
-        <ion-item>
-          <ion-accordion-group>
+          <ion-accordion-group class="content">
             <ion-accordion value="first">
-              <ion-item slot="header" color="light">
-                <ion-thumbnail slot="start">
-                  <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-                </ion-thumbnail>
-                <ion-label>First Accordion</ion-label>
+              <ion-item slot="header">
+                <ion-label>Mãos Falmejantes</ion-label>
               </ion-item>
-              <div class="ion-padding" slot="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque laboriosam sapiente ducimus blanditiis, nihil adipisci animi accusantium autem eum cupiditate libero soluta facere deserunt porro modi ipsa accusamus velit iste.</div>
+              <div class="ion-padding" slot="content">
+                <p><strong>Tempo de Conjuração:</strong> 1 Ação</p>
+                <p><strong>Duração:</strong> Instantaneo</p>
+                <p><strong>Componentes:</strong>V,S,M</p>
+                <p><strong>Descrição: </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, quod cupiditate voluptatem laboriosam iusto repudiandae officiis numquam magnam? Nisi debitis enim tempore cum harum similique magnam, vero laudantium repudiandae facere!</p>
+              </div>
             </ion-accordion>
           </ion-accordion-group>
-        </ion-item>
-      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>2° Circulo</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+          <ion-accordion-group class="content">
+            <ion-accordion value="first">
+              <ion-item slot="header">
+                <ion-label>Mãos Falmejantes</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                <p><strong>Tempo de Conjuração:</strong> 1 Ação</p>
+                <p><strong>Duração:</strong> Instantaneo</p>
+                <p><strong>Componentes:</strong>V,S,M</p>
+                <p><strong>Descrição: </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, quod cupiditate voluptatem laboriosam iusto repudiandae officiis numquam magnam? Nisi debitis enim tempore cum harum similique magnam, vero laudantium repudiandae facere!</p>
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
     </ion-card-content>
   </ion-card>
 </ion-content>
