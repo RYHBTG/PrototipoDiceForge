@@ -3,7 +3,6 @@
     <ion-grid class="toolbar"><!--Criado um grid pra separar as informaçoes-->
       <ion-row class="ion-justify-content-between"> <!--Faz o juste automatico do tamanho-->
         <ion-row>
-          <ion-img style="width: 40px;height: 40px;" src="../../assets/5aad1e98e2f1a0c78ce302f9bfe76f1a.jpg"></ion-img>
           <ion-col size="auto"><!--Faz o juste automatico do tamanho-->
             <ion-label>Alcides Sandoli</ion-label>
             <ion-row>
@@ -35,38 +34,57 @@
 <ion-content [fullscreen]="true" color="light shade">
 <div class="squere">
 <div>
-  <ion-label>Bônus de Proficência: {{proficiencia}}</ion-label>
+  <ion-thumbnail style=" margin-left: 25px; --size: 140px;  --border-radius: 70px;">
+    <ion-img src="../../assets/5aad1e98e2f1a0c78ce302f9bfe76f1a.jpg"></ion-img>
+  </ion-thumbnail>
   </div>
-  <div>
-  <ion-button class="bnt">Descanço Curto</ion-button>
-  <ion-button class="bnt">Descanço Longo</ion-button>
-</div>
-
+  <div class="vida">
+    <ion-buttons>
+      <ion-button (click)="healDamage(1)">
+          <ion-icon  color="success" name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <div id="quebra">
+      <ion-label>Pontos de Vida </ion-label>
+      <ion-label><strong>{{vidaMaxima}}</strong> / {{vidaAtual}}</ion-label>
+    </div>
+    <ion-buttons>
+      <ion-button (click)="takeDamagem(1)">
+        <ion-icon  color="danger" name="remove-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
 </div>
 <div class="VIA">
   <div class="coluna">
     <ion-label>
-      9m
+      AC
     </ion-label>
     <ion-label>
-      Velocidade
+      {{armadura}}
     </ion-label>
   </div>
+  <hr>
   <div class="coluna">
     <ion-label>
-      +3
+      BP
     </ion-label>
     <ion-label>
-      Iniciativa
+      {{proficiencia}}
     </ion-label>
   </div>
+  <hr>
   <div class="coluna">
     <ion-label>
-      18
+      Vel
     </ion-label>
     <ion-label>
-      Armadura
+      {{getvelocidade()}}
     </ion-label>
+  </div>
+  <hr>
+  <div class="coluna">
+    <ion-button size="small">init {{getiniciativa()}}</ion-button>
   </div>
 </div>
 <div class="att">

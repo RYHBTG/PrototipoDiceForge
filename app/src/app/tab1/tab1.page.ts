@@ -12,6 +12,11 @@ export class Tab1Page {
 
   constructor() {}
 
+  vidaMaxima: number = 10;
+  vidaAtual: number = 9;
+
+  velocidade:number = 9;
+  armadura:number = 19;
 
   proficiencia: number = +2;
   for:number = 10;
@@ -20,6 +25,10 @@ export class Tab1Page {
   int:number = 10;
   sab:number = 10;
   car:number = 10;
+
+
+
+
 
   //skills
   Atletismo: boolean = false;
@@ -79,6 +88,29 @@ export class Tab1Page {
       return "+" + att;
     else
       return "" + att;
+  }
+
+  getiniciativa():string{
+    return this.skillCheckCalc(this.des,false);
+  }
+  getvelocidade():string{
+    return  this.velocidade + "m";
+  }
+
+  takeDamagem(damage:number){
+    if(!((this.vidaAtual) <= 0))
+      this.vidaAtual-=damage;
+    else{
+      //dar aviso de erro
+    }
+
+  }
+  healDamage(heal:number){
+    if(!((this.vidaAtual) == this.vidaMaxima))
+      this.vidaAtual+=heal;
+    else{
+      //dar aviso de erro
+    }
   }
 }
 
