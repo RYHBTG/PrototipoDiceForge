@@ -183,7 +183,7 @@
       <ion-checkbox labelPlacement="end" justify="start"[(ngModel)]="Atletismo">Atletismo</ion-checkbox>
       <label>{{skillCheckCalc(for,Atletismo)}}</label>
       <ion-buttons>
-        <ion-button>
+        <ion-button (click)="rolarPericia(for,Atletismo, 'Atletismo')">
           <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -200,7 +200,7 @@
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Acrobacia" >Acrobacia</ion-checkbox>
       <label>{{skillCheckCalc(des,Acrobacia)}}</label>
       <ion-buttons>
-        <ion-button>
+        <ion-button (click)="rolarPericia(des,Acrobacia,'Acrobacia')">
           <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -210,7 +210,7 @@
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Prestidigitacao" >Prestidigitação</ion-checkbox>
       <label>{{skillCheckCalc(des,Prestidigitacao)}}</label>
       <ion-buttons>
-        <ion-button>
+        <ion-button (click)="rolarPericia(des,Prestidigitacao,'Prestidigitacao')">
           <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -220,7 +220,7 @@
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Furtividade">Furtividade</ion-checkbox>
       <label>{{skillCheckCalc(des,Furtividade)}}</label>
       <ion-buttons>
-        <ion-button>
+        <ion-button (click)="rolarPericia(des,Furtividade,'Furtividade')">
           <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -235,7 +235,7 @@
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Arcanismo">Arcanismo</ion-checkbox>
       <label>{{skillCheckCalc(int,Arcanismo)}}</label>
       <ion-buttons>
-        <ion-button>
+        <ion-button (click)="rolarPericia(int,Arcanismo,'Arcanismo')">
           <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -245,7 +245,7 @@
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Historia">História</ion-checkbox>
       <label>{{skillCheckCalc(int,Historia)}}</label>
       <ion-buttons>
-        <ion-button>
+        <ion-button (click)="rolarPericia(int,Historia,'Historia')">
           <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -255,7 +255,7 @@
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Investigacao">Investigação</ion-checkbox>
       <label>{{skillCheckCalc(int,Investigacao)}}</label>
       <ion-buttons>
-        <ion-button>
+        <ion-button (click)="rolarPericia(int,Investigacao,'Investigacao')">
           <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -265,7 +265,7 @@
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Natureza">Natureza</ion-checkbox>
       <label>{{skillCheckCalc(int,Natureza)}}</label>
       <ion-buttons>
-        <ion-button>
+        <ion-button (click)="rolarPericia(int,Natureza,'Natureza')">
           <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -275,7 +275,7 @@
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Religiao">Religião</ion-checkbox>
       <label>{{skillCheckCalc(int,Religiao)}}</label>
       <ion-buttons>
-        <ion-button>
+        <ion-button (click)="rolarPericia(int,Religiao,'Religiao')">
           <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -290,7 +290,7 @@
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="LidarAnimais">Lidar com Animais</ion-checkbox>
       <label>{{skillCheckCalc(sab,LidarAnimais)}}</label>
       <ion-buttons>
-        <ion-button>
+        <ion-button (click)="rolarPericia(sab,LidarAnimais,'LidarAnimais')">
           <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -300,7 +300,7 @@
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Intuicao">Intuição</ion-checkbox>
       <label>{{skillCheckCalc(sab,Intuicao)}}</label>
       <ion-buttons>
-        <ion-button>
+        <ion-button (click)="rolarPericia(sab,Intuicao,'Intuicao')">
           <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -310,7 +310,7 @@
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Medicina">Medicina</ion-checkbox>
       <label>{{skillCheckCalc(sab,Medicina)}}</label>
       <ion-buttons>
-        <ion-button>
+        <ion-button (click)="rolarPericia(sab,Medicina,'Medicina')">
           <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -320,7 +320,7 @@
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Percepcao">Percepção</ion-checkbox>
       <label>{{skillCheckCalc(sab,Percepcao)}}</label>
       <ion-buttons>
-        <ion-button>
+        <ion-button (click)="rolarPericia(sab,Percepcao,'Percepcao')">
           <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -330,7 +330,7 @@
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Sobrevivencia">Sobrevivencia</ion-checkbox>
       <label>{{skillCheckCalc(sab,Sobrevivencia)}}</label>
       <ion-buttons>
-        <ion-button>
+        <ion-button (click)="rolarPericia(sab,Sobrevivencia,'Sobrevivencia')">
           <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -345,7 +345,7 @@
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Enganacao">Enganação</ion-checkbox>
       <label>{{skillCheckCalc(car,Enganacao)}}</label>
       <ion-buttons>
-        <ion-button>
+        <ion-button (click)="rolarPericia(car,Enganacao,'Enganacao')">
           <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -355,7 +355,7 @@
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Intimidacao">Intimidação</ion-checkbox>
       <label>{{skillCheckCalc(car,Intimidacao)}}</label>
       <ion-buttons>
-        <ion-button>
+        <ion-button (click)="rolarPericia(car, Intimidacao,'Intimidacao')">
           <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -365,7 +365,7 @@
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Performance">Performance</ion-checkbox>
       <label>{{skillCheckCalc(car,Performance)}}</label>
       <ion-buttons>
-        <ion-button>
+        <ion-button (click)="rolarPericia(car, Performance,'Performance')">
           <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -375,7 +375,7 @@
       <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="Persuasao">Persuasão</ion-checkbox>
       <label>{{skillCheckCalc(car,Persuasao)}}</label>
       <ion-buttons>
-        <ion-button>
+        <ion-button (click)="rolarPericia(car, Persuasao,'Persuasao')">
           <ion-icon slot="icon-only" name="dice-outline" ></ion-icon>
         </ion-button>
       </ion-buttons>

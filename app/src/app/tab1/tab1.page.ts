@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -10,7 +11,7 @@ export class Tab1Page {
 
 
 
-  constructor() {}
+  constructor(private alertController: AlertController) {}
 
   vidaMaxima: number = 10;
   vidaAtual: number = 9;
@@ -70,12 +71,8 @@ export class Tab1Page {
   }
 
 
-  modificadorCalc(att:number): string{
-    att = Math.floor((att-10)/2);
-    if(att >= 0)
-      return "+" + att;
-    else
-      return "" + att;
+  modificadorCalc(att:number): number{
+   return Math.floor((att-10)/2);
   }
 
   skillCheckCalc(att:number,proficiente:boolean): string{
@@ -88,6 +85,13 @@ export class Tab1Page {
       return "+" + att;
     else
       return "" + att;
+  }
+  skillCheckCalcNum(att:number,proficiente:boolean): number{
+    if(proficiente)
+      att = Math.floor((att-10)/2) + this.proficiencia;
+    else
+      att = Math.floor((att-10)/2);
+    return att;
   }
 
   getiniciativa():string{
@@ -111,6 +115,23 @@ export class Tab1Page {
     else{
       //dar aviso de erro
     }
+  }
+   rollDice(min:number, max:number):number {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  async rolarPericia(atributo:number, pericia:boolean, name:string) {
+    let rolagem:number = this.rollDice(1,20);
+    let res:number = rolagem + this.skillCheckCalcNum(atributo,pericia)
+    const alert = await this.alertController.create({
+      header: name ,
+      subHeader:'(1d20 + ' + this.skillCheckCalcNum(atributo,pericia) + ') → ' + rolagem.toString() + " + " + this.skillCheckCalcNum(atributo,pericia).toString(),
+      message:  res.toString(),
+      buttons: ['OK'],
+    });
+
+    await alert.present();
   }
 }
 
