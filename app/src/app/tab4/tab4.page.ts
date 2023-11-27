@@ -40,7 +40,7 @@ export class Tab4Page implements OnInit {
 
   async setOpen(isOpen: boolean) {
       if(isOpen == false){
-        if(!(this.nomeMagia == ""|| this.tempoConjuracao == ""|| this.duracaoMagia == ""|| !(this.componenteVerbal == false|| this.componenteSomatico == false|| this.componenteMaterial == false)|| this.descricaoMagia == ""))
+        if(!(this.nomeMagia == ""|| this.tempoConjuracao == ""|| this.duracaoMagia == ""|| (this.componenteVerbal == false && this.componenteSomatico == false && this.componenteMaterial == false) || this.descricaoMagia == ""))
         { 
           const componentesMagia:string = this.getComponentesMagia(this.componenteVerbal,this.componenteSomatico,this.componenteMaterial);
           const newMagia:any = {name: this.nomeMagia, conjuracao:this.tempoConjuracao, duracao: this.duracaoMagia,componentes:componentesMagia, circulo: this.circuloMagia ,descricao:this.descricaoMagia};

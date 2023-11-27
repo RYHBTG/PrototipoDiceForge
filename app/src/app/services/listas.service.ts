@@ -1,21 +1,43 @@
 import { Injectable } from '@angular/core';
+import { Preferences } from '@capacitor/preferences';
+
+
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListasService {
 
-  constructor() { }
-  private listmagias:any = [{name: "Mãos Flamejantes", conjuracao: "1 Ação", duracao: "Instantaneo",componentes:"V,S,M", circulo: 1 ,descricao: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, quod cupiditate voluptatem laboriosam iusto repudiandae officiis numquam magnam? Nisi debitis enim tempore cum harum similique magnam, vero laudantium repudiandae facere!" },
-                              {name: "Misseis Magicos", conjuracao: "1 Ação", duracao: "Instantaneo", componentes: "V,S", circulo: 1, descricao: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, quod cupiditate voluptatem laboriosam iusto repudiandae officiis numquam magnam? Nisi debitis enim tempore cum harum similique magnam, vero laudantium repudiandae facere!"}];
+
+
+// JSON "set" example
+async setObject(info:any) {
+  await Preferences.set({
+    key: 'user',
+    value: JSON.stringify(info)
+  });
+}
+private listmagias:any = [];
+
+async getObject() {
+  const ret:any = await Preferences.get({ key: 'user' });
+  this.listmagias = JSON.parse(ret.value);
+}
+  
+  constructor() { this.getObject()  }
+  
 
   public getMagias():any[]{
     return this.listmagias;
   }
   public addMagias(novaMagia:any[]){
     this.listmagias.push(novaMagia) ;
+    this.setObject(this.listmagias);
   }
   delMagias(indice:number){
     this.listmagias.splice(indice,1);
+    this.setObject(this.listmagias);
   }
 }
