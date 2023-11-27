@@ -114,4 +114,9 @@ export class Tab4Page implements OnInit {
       await alert.present();
     
   }
+  onWillDismiss(event: Event) {
+    this.limparvariaveis();
+    this.isModalOpen = false;
+  }
+
 }
