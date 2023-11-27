@@ -31,5 +31,40 @@
 
 
 <ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Habilidade</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+          <ion-accordion-group class="content" *ngFor="let le of listHabilidade.getHabilidades(); let ind = index">
+            <ion-accordion value="first">
+              <ion-item slot="header">
+                <ion-label>{{le.name}}</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                <p><strong> Alcace: </strong>{{le.alcance}}</p>
+                <p><strong> Dano: </strong>{{le.dano}}</p>
+                <p><strong> Proproedades: </strong>{{le.proproedades}}</p>
+                <ion-row class="ion-justify-content-between">
+                  <ion-button (click)="apagarItem(ind)" color="danger" ><ion-icon slot="icon-only" name="trash" ></ion-icon></ion-button>
+                  <ion-button color="primary" ><ion-icon slot="icon-only" name="dice-outline" ></ion-icon></ion-button>
+                </ion-row>
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+    </ion-card-content>
+  </ion-card>
 
+  <ion-fab id="popover-button" slot="fixed" vertical="bottom" horizontal="end">
+  <ion-fab-button (click)="setOpen(true)">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+<ion-modal [isOpen]="isModalOpen" id="example-modal" #modal (willDismiss)="onWillDismiss($event)">
+  <ng-template>
+    <div class="wrapper">
+
+    </div>
+  </ng-template>
+</ion-modal>
 </ion-content>

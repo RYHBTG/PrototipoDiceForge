@@ -23,7 +23,8 @@ async setObject(info:any,key:string) {
     value: JSON.stringify(info)
   });
 }
-async getmagias(key:string) {
+
+async getmagia(key:string) {
   const ret:any = await Preferences.get({ key: key });
   this.listmagias = JSON.parse(ret.value);
   if(this.listmagias == null)
@@ -35,14 +36,22 @@ async getEquipamento(key:string) {
   const ret:any = await Preferences.get({ key: key });
   this.listEquipamentos = JSON.parse(ret.value);
   if(this.listEquipamentos == null)
-    this.setObject([],'magias'+this.id);
+    this.setObject([],'Equipamentos'+this.id);
+}
+
+async getHabilidade(key:string) {
+  const ret:any = await Preferences.get({ key: key });
+  this.listHabilidades = JSON.parse(ret.value);
+  if(this.listHabilidades == null)
+    this.setObject([],'Habilidades'+this.id);
 }
   
   id:number = 0;
 
   constructor() { 
-    this.getmagias('magias'+this.id);
+    this.getmagia('magias'+this.id);
     this.getEquipamento('Equipamentos'+this.id);
+    this.getHabilidade('Habilidades'+this.id)
   }
   
   //controle Magias
@@ -59,7 +68,7 @@ async getEquipamento(key:string) {
   }
 
 
-//controle Habilidades
+//controle Equipamentos
   public getEquipamentos():any[]{
     return this.listEquipamentos;
   }
@@ -70,5 +79,18 @@ async getEquipamento(key:string) {
    public delEquipamentos(indice:number){
     this.listEquipamentos.splice(indice,1);
     this.setObject(this.listEquipamentos,'Equipamentos'+this.id);
+  }
+
+  //controle Habilidades
+  public getHabilidades():any[]{
+    return this.listHabilidades;
+  }
+  public addHabilidades(novoHabilidades:any[]){
+    this.listHabilidades.push(novoHabilidades) ;
+    this.setObject(this.listHabilidades,'Habilidades'+this.id);
+  }
+   public delHabilidades(indice:number){
+    this.listHabilidades.splice(indice,1);
+    this.setObject(this.listHabilidades,'Habilidades'+this.id);
   }
 }
