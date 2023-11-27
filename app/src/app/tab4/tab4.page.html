@@ -64,82 +64,76 @@
 <ion-modal [isOpen]="isModalOpen" id="example-modal" #modal (willDismiss)="onWillDismiss($event)">
   <ng-template>
     <div class="wrapper">
-        <ion-toolbar>
-          <ion-buttons slot="start">
-            <ion-button (click)="cancel(false)">Cancel</ion-button>
-          </ion-buttons>
-          <ion-title>Adicionar</ion-title>
-          <ion-buttons slot="end">
-            <ion-button (click)="setOpen(false)" [strong]="true">Salvar</ion-button>
-          </ion-buttons>
-        </ion-toolbar>
-        <ion-item>
-          <ion-select
-                interface="popover"
-                toggleIcon="chevron-down-outline"
-                expandedIcon="chevron-up-outline"
-                aria-label="fruit"
-                label="Tempo de Conjuração"
-                label-placement="floating"
-                [(ngModel)]="circuloMagia"
-              >
-                <ion-select-option *ngFor="let cir of circulos" value="{{cir}}">{{cir}}° Circulo</ion-select-option>
-              </ion-select>
-        </ion-item>
         <ion-list>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-button (click)="cancel(false)">Cancel</ion-button>
+            </ion-buttons>
+            <ion-title>Adicionar</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="setOpen(false)" [strong]="true">Salvar</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
           <ion-item>
-            <ion-input [(ngModel)]="nomeMagia" label="Nome da Magia" label-placement="floating" fill="solid" ></ion-input>
+            <ion-select
+                  interface="popover"
+                  aria-label="fruit"
+                  label="Tempo de Conjuração"
+                  label-placement="floating"
+                  [(ngModel)]="circuloMagia"
+                >
+                  <ion-select-option *ngFor="let cir of circulos" value="{{cir}}">{{cir}}° Circulo</ion-select-option>
+                </ion-select>
           </ion-item>
+          <ion-list>
+            <ion-item>
+              <ion-input [(ngModel)]="nomeMagia" label="Nome da Magia" label-placement="floating" fill="solid" ></ion-input>
+            </ion-item>
+              <ion-item>
+                <ion-select
+                  interface="popover"
+                  label="Tempo de Conjuração"
+                  label-placement="floating"
+                  [(ngModel)]="tempoConjuracao"
+                >
+                  <ion-select-option value="1 Ação">1 Ação</ion-select-option>
+                  <ion-select-option value="1 Ação Bônus">1 Ação Bônus</ion-select-option>
+                  <ion-select-option value="Reação">Reação</ion-select-option>
+                  <ion-select-option value="1 minuto">1 minuto</ion-select-option>
+                  <ion-select-option value="1 hora">1 hora</ion-select-option>
+                </ion-select>
+              </ion-item>
             <ion-item>
               <ion-select
                 interface="popover"
-                toggleIcon="chevron-down-outline"
-                expandedIcon="chevron-up-outline"
                 aria-label="fruit"
-                label="Tempo de Conjuração"
+                label="Duração"
                 label-placement="floating"
-                [(ngModel)]="tempoConjuracao"
+                [(ngModel)]="duracaoMagia"
               >
-                <ion-select-option value="1 Ação">1 Ação</ion-select-option>
-                <ion-select-option value="1 Ação Bônus">1 Ação Bônus</ion-select-option>
-                <ion-select-option value="Reação">Reação</ion-select-option>
+                <ion-select-option value="Instantaneo">Instantaneo</ion-select-option>
                 <ion-select-option value="1 minuto">1 minuto</ion-select-option>
                 <ion-select-option value="1 hora">1 hora</ion-select-option>
+                <ion-select-option value="1 minuto, Concentração">1 minuto, Concentração</ion-select-option>
+                <ion-select-option value="1 hora, Concentração">1 hora, Concentração</ion-select-option>
               </ion-select>
             </ion-item>
-      
-          <ion-item>
-            <ion-select
-              interface="popover"
-              toggleIcon="chevron-down-outline"
-              expandedIcon="chevron-up-outline"
-              aria-label="fruit"
-              label="Duração"
+            <ion-item >
+              <label>Componentes: </label>
+              <ion-checkbox labelPlacement="stacked" alignment="center" justify="start" [(ngModel)]="componenteVerbal">V</ion-checkbox>
+              <ion-checkbox labelPlacement="stacked" alignment="center" justify="start" [(ngModel)]="componenteSomatico">S</ion-checkbox>
+              <ion-checkbox labelPlacement="stacked" alignment="center" justify="start" [(ngModel)]="componenteMaterial">M</ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-textarea
+              label="Descrição da Magia"
               label-placement="floating"
-              [(ngModel)]="duracaoMagia"
-            >
-              <ion-select-option value="1 Ação">Instantaneo</ion-select-option>
-              <ion-select-option value="1 minuto">1 minuto</ion-select-option>
-              <ion-select-option value="1 hora">1 hora</ion-select-option>
-              <ion-select-option value="1 minuto">1 minuto, Concentração</ion-select-option>
-              <ion-select-option value="1 hora">1 hora, Concentração</ion-select-option>
-            </ion-select>
-          </ion-item>
-          <ion-item >
-            <label>Componentes: </label>
-            <ion-checkbox labelPlacement="stacked" alignment="center" justify="start" [(ngModel)]="componenteVerbal">V</ion-checkbox>
-            <ion-checkbox labelPlacement="stacked" alignment="center" justify="start" [(ngModel)]="componenteSomatico">S</ion-checkbox>
-            <ion-checkbox labelPlacement="stacked" alignment="center" justify="start" [(ngModel)]="componenteMaterial">M</ion-checkbox>
-          </ion-item>
-          <ion-item>
-            <ion-textarea
-            label="Descrição da Magia"
-            label-placement="floating"
-            fill="solid"
-            [autoGrow]="true"
-            [(ngModel)]="descricaoMagia"
-                ></ion-textarea>
-          </ion-item>
+              fill="solid"
+              [autoGrow]="true"
+              [(ngModel)]="descricaoMagia"
+                  ></ion-textarea>
+            </ion-item>
+          </ion-list>
         </ion-list>
     </div>
   </ng-template>

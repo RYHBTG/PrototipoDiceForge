@@ -9,7 +9,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class Tab4Page implements OnInit {
 
-  constructor(public listaMagias: ListasService, private alertController: AlertController) { }
+  constructor(protected listaMagias: ListasService, private alertController: AlertController) { }
 
   circulos:number[] = [0,1,2,3,4,5,6,7,8,9];
 
