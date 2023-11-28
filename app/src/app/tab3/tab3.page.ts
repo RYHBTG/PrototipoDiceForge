@@ -11,14 +11,18 @@ export class Tab3Page {
 
   nomeHabilidade:string = '';
   tipoHabilidade:string = '';
+  usosHabilidade:string = '';
   recargaHabilidade:string = '';
+  descicaoHabilidade:string = '';
   isModalOpen:boolean = false;
+
+
   constructor(public listHabilidade:ListasService,protected alertController:AlertController) {}
   async setOpen(isOpen: boolean) {
     if(isOpen == false){
-      if(!(this.nomeHabilidade == '' ||  this.tipoHabilidade == '' || this.recargaHabilidade == ''))
-      { 
-        const newabilidade:any = {};
+      if(!(this.nomeHabilidade == '' ||  this.tipoHabilidade == '' || this.descicaoHabilidade == ''))
+      {
+        const newabilidade:any = {nome: this.nomeHabilidade, tipo: this.tipoHabilidade,usos: this.usosHabilidade,recarga: this.recargaHabilidade, descricao: this.descicaoHabilidade};
         this.listHabilidade.addHabilidades(newabilidade);
         this.limparvariaveis();
       }else{
@@ -27,13 +31,13 @@ export class Tab3Page {
         message: 'Algum campo não foi preenchido.',
         buttons: ['Ok'],
         });
-  
+
         await alert.present();
         return;
       }
     }
   this.isModalOpen = isOpen;
-  
+
 }
 
 cancel(isOpen: boolean){
@@ -62,7 +66,7 @@ cancel(isOpen: boolean){
       });
 
       await alert.present();
-    
+
   }
   limparvariaveis(){
 

@@ -1,3 +1,4 @@
+import { ListasService } from './../services/listas.service';
 import { Component, ViewChild } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
@@ -11,7 +12,7 @@ export class Tab1Page {
 
 
 
-  constructor(private alertController: AlertController) {}
+  constructor(public statusService:ListasService,private alertController: AlertController) {}
 
   vidaMaxima: number = 10;
   vidaAtual: number = 9;
@@ -26,10 +27,6 @@ export class Tab1Page {
   int:number = 10;
   sab:number = 10;
   car:number = 10;
-
-
-
-
 
   //skills
   Atletismo: boolean = false;
@@ -50,6 +47,8 @@ export class Tab1Page {
   Intimidacao: boolean = false;
   Performance: boolean = false;
   Persuasao: boolean = false;
+
+
 
   setfor(newfor:any){
     this.for = newfor.target!.value;
@@ -104,17 +103,12 @@ export class Tab1Page {
   takeDamagem(damage:number){
     if(!((this.vidaAtual) <= 0))
       this.vidaAtual-=damage;
-    else{
-      //dar aviso de erro
-    }
 
   }
   healDamage(heal:number){
     if(!((this.vidaAtual) == this.vidaMaxima))
       this.vidaAtual+=heal;
-    else{
-      //dar aviso de erro
-    }
+
   }
    rollDice(min:number, max:number):number {
     min = Math.ceil(min);

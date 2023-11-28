@@ -10,6 +10,10 @@ import { Preferences } from '@capacitor/preferences';
 })
 export class ListasService {
 
+
+
+
+
 private listmagias:any = [];
 private listHabilidades:any = [];
 private listEquipamentos:any = [];
@@ -45,21 +49,27 @@ async getHabilidade(key:string) {
   if(this.listHabilidades == null)
     this.setObject([],'Habilidades'+this.id);
 }
-  
+async getliststatu(key:string) {
+  const ret:any = await Preferences.get({ key: key });
+  this.listHabilidades = JSON.parse(ret.value);
+  if(this.listHabilidades == null)
+    this.setObject([],'liststatus'+this.id);
+}
+
   id:number = 0;
 
-  constructor() { 
+  constructor() {
     this.getmagia('magias'+this.id);
     this.getEquipamento('Equipamentos'+this.id);
-    this.getHabilidade('Habilidades'+this.id)
+    this.getHabilidade('Habilidades'+this.id);
   }
-  
+
   //controle Magias
   public getMagias():any[]{
     return this.listmagias;
   }
   public addMagias(novaMagia:any[]){
-    this.listmagias.push(novaMagia) ; 
+    this.listmagias.push(novaMagia) ;
     this.setObject(this.listmagias,'magias'+this.id);
   }
   public delMagias(indice:number){
@@ -93,4 +103,5 @@ async getHabilidade(key:string) {
     this.listHabilidades.splice(indice,1);
     this.setObject(this.listHabilidades,'Habilidades'+this.id);
   }
+
 }

@@ -3,7 +3,6 @@
     <ion-grid class="toolbar"><!--Criado um grid pra separar as informaçoes-->
       <ion-row class="ion-justify-content-between"> <!--Faz o juste automatico do tamanho-->
         <ion-row>
-          <ion-img style="width: 40px;height: 40px;" src="../../assets/5aad1e98e2f1a0c78ce302f9bfe76f1a.jpg"></ion-img>
           <ion-col size="auto"><!--Faz o juste automatico do tamanho-->
             <ion-label>Alcides Sandoli</ion-label>
             <ion-row>
@@ -36,18 +35,17 @@
       <ion-card-title>Habilidade</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-          <ion-accordion-group class="content" *ngFor="let le of listHabilidade.getHabilidades(); let ind = index">
+          <ion-accordion-group class="content" *ngFor="let lh of listHabilidade.getHabilidades(); let ind = index">
             <ion-accordion value="first">
               <ion-item slot="header">
-                <ion-label>{{le.name}}</ion-label>
+                <ion-label>{{lh.nome}}</ion-label>
               </ion-item>
               <div class="ion-padding" slot="content">
-                <p><strong> Alcace: </strong>{{le.alcance}}</p>
-                <p><strong> Dano: </strong>{{le.dano}}</p>
-                <p><strong> Proproedades: </strong>{{le.proproedades}}</p>
+                <p><strong> Tipo: </strong>{{lh.tipo}}</p>
+                <p><strong> Usos: </strong>{{lh.usos}}/{{lh.recarga}}</p>
+                <p><strong> Descrição: </strong> {{lh.descricao}} </p>
                 <ion-row class="ion-justify-content-between">
                   <ion-button (click)="apagarItem(ind)" color="danger" ><ion-icon slot="icon-only" name="trash" ></ion-icon></ion-button>
-                  <ion-button color="primary" ><ion-icon slot="icon-only" name="dice-outline" ></ion-icon></ion-button>
                 </ion-row>
               </div>
             </ion-accordion>
@@ -63,7 +61,53 @@
 <ion-modal [isOpen]="isModalOpen" id="example-modal" #modal (willDismiss)="onWillDismiss($event)">
   <ng-template>
     <div class="wrapper">
+      <ion-list>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel(false)">Cancel</ion-button>
+          </ion-buttons>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)" [strong]="true">Salvar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      <ion-list>
+        <ion-item>
+          <ion-input [(ngModel)]="nomeHabilidade" label="Nome da Habilidade" label-placement="floating" ></ion-input>
+        </ion-item>
+        <ion-row>
+            <ion-select
+                interface="popover"
+                label="Tipo da Habilidade"
+                label-placement="floating"
+                [(ngModel)]="tipoHabilidade"
+                id="collum"
+              >
+                <ion-select-option value="Passiva">Passiva</ion-select-option>
+                <ion-select-option value="Ativa">Ativa</ion-select-option>
+              </ion-select>
+        </ion-row>
+        <ion-row>
+          <ion-item>
+            <ion-input [(ngModel)]="usosHabilidade" label="Numero de Usos" label-placement="floating"></ion-input>
+              <ion-select
+                  interface="popover"
+                  label="Recarga"
+                  label-placement="floating"
+                  [(ngModel)]="recargaHabilidade"
+                  class="collum"
+                  type="number"
+                  maxlength="2">
+                  <ion-select-option value="Descanso Curto">Descanso Curto</ion-select-option>
+                  <ion-select-option value="Descanso Longo">Descanso Longo</ion-select-option>
+                </ion-select>
+          </ion-item>
 
+        </ion-row>
+        <ion-item>
+          <ion-textarea [(ngModel)]="descicaoHabilidade" label="Descição da Habilidade" label-placement="floating" ></ion-textarea>
+        </ion-item>
+      </ion-list>
+      </ion-list>
     </div>
   </ng-template>
 </ion-modal>

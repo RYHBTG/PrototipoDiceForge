@@ -3,7 +3,6 @@
     <ion-grid class="toolbar"><!--Criado um grid pra separar as informaçoes-->
       <ion-row class="ion-justify-content-between"> <!--Faz o juste automatico do tamanho-->
         <ion-row>
-          <ion-img style="width: 40px;height: 40px;" src="../../assets/5aad1e98e2f1a0c78ce302f9bfe76f1a.jpg"></ion-img>
           <ion-col size="auto"><!--Faz o juste automatico do tamanho-->
             <ion-label>Alcides Sandoli</ion-label>
             <ion-row>
@@ -63,73 +62,71 @@
 <ion-modal [isOpen]="isModalOpen" id="example-modal" #modal (willDismiss)="onWillDismiss($event)">
   <ng-template>
     <div class="wrapper">
-      <ion-list>
         <ion-toolbar>
           <ion-buttons slot="start">
             <ion-button (click)="cancel(false)">Cancel</ion-button>
           </ion-buttons>
-          <ion-title>Adicionar</ion-title>
           <ion-buttons slot="end">
             <ion-button (click)="setOpen(false)" [strong]="true">Salvar</ion-button>
           </ion-buttons>
         </ion-toolbar>
-
             <ion-input [(ngModel)]="nome" label="Nome do Equipamentos" label-placement="floating" fill="solid" ></ion-input>
-          
-        
-            
-              <ion-select
-                interface="popover"
-                label="Alcance da Arma"
-                label-placement="floating"
-                [(ngModel)]="alcance"
-                class="collum"
-              >
-                <ion-select-option value="1.5m">1.5m</ion-select-option>
-                <ion-select-option value="1.5m/4.5">1.5m/4.5</ion-select-option>
-                <ion-select-option value="7.5m/30m">7.5m/30m</ion-select-option>
-                <ion-select-option value="6m/18m">6m/18m</ion-select-option>
-                <ion-select-option value="9m/36m">9m/36m</ion-select-option>
-                <ion-select-option value="24m/96m">24m/96m</ion-select-option>
-                <ion-select-option value="30m/120m">30m/120m</ion-select-option>
-                <ion-select-option value="45m/180m">45m/180m</ion-select-option>
-              </ion-select>
-              <ion-select
-                interface="popover"
-                label="Dano da Arma"
-                label-placement="floating"
-                [(ngModel)]="dano"
-                class="collum"
-              >
-                <ion-select-option value="1d4">1d4</ion-select-option>
-                <ion-select-option value="1d6">1d6</ion-select-option>
-                <ion-select-option value="1d8">1d8</ion-select-option>
-                <ion-select-option value="1d10">1d10</ion-select-option>
-                <ion-select-option value="1d12">1d12</ion-select-option>
-                <ion-select-option value="2d6">2d6</ion-select-option>
-              </ion-select>
-              <ion-select
-                interface="popover"
-                label="Dano da Arma"
-                label-placement="floating"
-                [(ngModel)]="proproedades"
-                [multiple]="true"
-                class="collum"
-              >
-                <ion-select-option value="Leve">Leve</ion-select-option>
-                <ion-select-option value="Pesada">Pesada</ion-select-option>
-                <ion-select-option value="Versátil">Versátil</ion-select-option>
-                <ion-select-option value="Duas mãos">Duas mãos</ion-select-option>
-                <ion-select-option value="Acuidade">Acuidade</ion-select-option>
-                <ion-select-option value="Alcance">Alcance</ion-select-option>
-                <ion-select-option value="Arremesso">Arremesso</ion-select-option>
-                <ion-select-option value="Distância">Distância</ion-select-option>
-                <ion-select-option value="Munição">Munição</ion-select-option>
-                <ion-select-option value="Recarga">Recarga</ion-select-option>
-                <ion-select-option value="Especial">Especial</ion-select-option>
-              </ion-select>
-      </ion-list>
-
+          <ion-row>
+            <ion-select
+              interface="popover"
+              label="Alcance da Arma"
+              label-placement="floating"
+              [(ngModel)]="alcance"
+              class="collum"
+            >
+              <ion-select-option value="1.5m">1.5m</ion-select-option>
+              <ion-select-option value="1.5m/4.5">1.5m/4.5</ion-select-option>
+              <ion-select-option value="7.5m/30m">7.5m/30m</ion-select-option>
+              <ion-select-option value="6m/18m">6m/18m</ion-select-option>
+              <ion-select-option value="9m/36m">9m/36m</ion-select-option>
+              <ion-select-option value="24m/96m">24m/96m</ion-select-option>
+              <ion-select-option value="30m/120m">30m/120m</ion-select-option>
+              <ion-select-option value="45m/180m">45m/180m</ion-select-option>
+            </ion-select>
+          </ion-row>
+          <ion-row>
+            <ion-select
+              interface="popover"
+              label="Dano da Arma"
+              label-placement="floating"
+              [(ngModel)]="dano"
+              class="collum"
+            >
+              <ion-select-option value="1d4">1d4</ion-select-option>
+              <ion-select-option value="1d6">1d6</ion-select-option>
+              <ion-select-option value="1d8">1d8</ion-select-option>
+              <ion-select-option value="1d10">1d10</ion-select-option>
+              <ion-select-option value="1d12">1d12</ion-select-option>
+              <ion-select-option value="2d6">2d6</ion-select-option>
+            </ion-select>
+          </ion-row>
+          <ion-row>
+            <ion-select
+              interface="popover"
+              label="Proproedades da Arma"
+              label-placement="floating"
+              [(ngModel)]="proproedades"
+              [multiple]="true"
+              class="collum"
+            >
+              <ion-select-option value="Leve">Leve</ion-select-option>
+              <ion-select-option value="Pesada">Pesada</ion-select-option>
+              <ion-select-option value="Versátil">Versátil</ion-select-option>
+              <ion-select-option value="Duas mãos">Duas mãos</ion-select-option>
+              <ion-select-option value="Acuidade">Acuidade</ion-select-option>
+              <ion-select-option value="Alcance">Alcance</ion-select-option>
+              <ion-select-option value="Arremesso">Arremesso</ion-select-option>
+              <ion-select-option value="Distância">Distância</ion-select-option>
+              <ion-select-option value="Munição">Munição</ion-select-option>
+              <ion-select-option value="Recarga">Recarga</ion-select-option>
+              <ion-select-option value="Especial">Especial</ion-select-option>
+            </ion-select>
+          </ion-row>
     </div>
   </ng-template>
 </ion-modal>

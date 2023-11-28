@@ -81,7 +81,7 @@
   </div>
   <hr>
   <div class="coluna">
-    <ion-button size="small">init {{getiniciativa()}}</ion-button>
+    <ion-button (click)="rolarPericia(des,false,'iniciativa')" size="small">init {{getiniciativa()}}</ion-button>
   </div>
 </div>
 <div class="att">
@@ -381,23 +381,4 @@
   </ion-item-group>
 </ion-list>
 
-<!--
-<div class="condlist">
-<ion-checkbox labelPlacement="end">Agarrado</ion-checkbox>
-<ion-checkbox labelPlacement="end">Amedrontado</ion-checkbox>
-<ion-checkbox labelPlacement="end">Atordoado</ion-checkbox>
-<ion-checkbox labelPlacement="end">Caído</ion-checkbox>
-<ion-checkbox labelPlacement="end">Cego</ion-checkbox>
-<ion-checkbox labelPlacement="end">Contido</ion-checkbox>
-<ion-checkbox labelPlacement="end">Envenenado</ion-checkbox>
-<ion-checkbox labelPlacement="end">Enfeitiçado</ion-checkbox>
-<ion-checkbox labelPlacement="end">Incapacitado</ion-checkbox>
-<ion-checkbox labelPlacement="end">Inconsciente</ion-checkbox>
-<ion-checkbox labelPlacement="end">Invisível</ion-checkbox>
-<ion-checkbox labelPlacement="end">Paralisado</ion-checkbox>
-<ion-checkbox labelPlacement="end">Petrificado</ion-checkbox>
-<ion-checkbox labelPlacement="end">Surdo</ion-checkbox>
-<ion-checkbox labelPlacement="end">Surpresa</ion-checkbox>
-</div>
--->
 </ion-content>
