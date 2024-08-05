@@ -12,6 +12,7 @@
   height: auto;
   margin-bottom: 4%;
   margin-top: 2%;
+  --background: #d8d8d8;
 }
 
 .vida{
@@ -125,6 +126,10 @@ ion-input.custom {
   display: flex;
   margin-left: 20%;
 
+
 }
 
+body{
+  --ion-background-color: #555752;
+}
 
